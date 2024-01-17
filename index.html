@@ -140,7 +140,17 @@ submitbtn.addEventListener("click",function crudopt(event) {
 
 
 
-
+if (
+    nameinpt.value.trim() === "" ||
+    rollinpt.value.trim() === "" ||
+    fatherinpt.value.trim() === "" ||
+    courseinpt.value.trim() === "" ||
+    specilizationinpt.value.trim() === "" ||
+    universityinpt.value.trim() === ""
+) {
+    alert("Please fill in all the fields before submitting the form.");
+    return;
+}
 
 
 
