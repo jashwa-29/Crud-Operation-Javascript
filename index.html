@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Operation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="flex-div">
+        <h1> Student Registration Form</h1>
+        <br>
+        <form action="">
+            <div class="wrapper">
+               <div class="input-data">
+                  <input type="text" required  id="name-box">
+                  <div class="underline"></div>
+                  <label>Name</label><br>
+               </div><br>
+               <div class="input-data">
+                  <input type="number" required  id="roll-box">
+                  <div class="underline"></div>
+                  <label>Roll No</label><br>
+               </div><br>
+               <div class="input-data">
+                  <input type="text" required id="fathername-box">
+                  <div class="underline"></div>
+                  <label>Father Name</label><br>
+               </div><br>
+               <div class="input-data">
+                  <input type="text" required  id="course-box">
+                  <div class="underline"></div>
+                  <label>Course</Address></label><br>
+               </div><br>
+               <div class="input-data">
+                  <input type="text" required id="coursesep-box">
+                  <div class="underline"></div>
+                  <label>Course Specilization</label><br>
+               </div><br>
+               <div class="input-data">
+                  <input type="text" required id="university-box">
+                  <div class="underline"></div>
+                  <label>University Name</label><br>
+               </div><br>
+           <button type="submit" id="submit-btn">Submit</button>
+            </div>
+        </form> 
+</div><br><br>
+
+
+<div id="maindiv">
+   <!-- <div id="ans-heading">
+
+   </div> -->
+</div>
+  <script>
+   let nameinpt = document.getElementById("name-box")
+let rollinpt = document.getElementById("roll-box")
+let fatherinpt = document.getElementById("fathername-box")
+let courseinpt = document.getElementById("course-box")
+let specilizationinpt = document.getElementById("coursesep-box")
+let universityinpt = document.getElementById("university-box")
+
+let submitbtn = document.getElementById("submit-btn")
+let maindiv = document.getElementById("maindiv")
+// let sh3div = document.getElementById("ans-div")
+
+let answerhd = document.createElement("h2")
+answerhd.textContent="Entered Data"
+
+
+
+let nheading = document.createElement("h3")
+nheading.textContent="NAME"
+nheading.classList.add("name-head")
+
+let rheading = document.createElement("h3")
+rheading.textContent="ROLL NO"
+rheading.classList.add("roll-head")
+
+let fheading = document.createElement("h3")
+fheading.textContent="FATHER NAME"
+fheading.classList.add("father-head")
+
+let cheading = document.createElement("h3")
+cheading.textContent="COURSE"
+cheading.classList.add("course-head")
+
+let csheading = document.createElement("h3")
+csheading.textContent="SPECILIZATION"
+csheading.classList.add("cs-head")
+
+let uheading = document.createElement("h3")
+uheading.textContent="UNIVERSITY"
+uheading.classList.add("university-head")
+
+
+
+submitbtn.addEventListener("click",function crudopt(event) {
+
+    event.preventDefault();
+
+
+    let secdiv = document.createElement("div")
+
+
+    let nameans = document.createElement("input")
+    let rollans = document.createElement("input")
+    let fatherans = document.createElement("input")
+    let courseans = document.createElement("input")
+    let specialans = document.createElement("input")
+    let universityans = document.createElement("input")
+
+    nameans.value=nameinpt.value
+    nameans.setAttribute("readonly","readonly")
+    nameans.classList.add("name-box-ans");
+
+    rollans.value=rollinpt.value
+    rollans.setAttribute("readonly","readonly")
+    rollans.classList.add("roll-box-ans");
+
+
+    fatherans.value=fatherinpt.value
+    fatherans.setAttribute("readonly","readonly")
+    fatherans.classList.add("father-box-ans");
+
+    courseans.value=courseinpt.value
+    courseans.setAttribute("readonly","readonly")
+    courseans.classList.add("course-box-ans");
+
+    specialans.value=specilizationinpt.value
+    specialans.setAttribute("readonly","readonly")
+    specialans.classList.add("special-box-ans");
+
+
+    universityans.value=universityinpt.value
+    universityans.setAttribute("readonly","readonly")
+    universityans.classList.add("university-box-ans");
+
+
+
+
+
+
+
+    let editbtn = document.createElement("button")
+    editbtn.innerHTML="Edit"
+
+    editbtn.addEventListener("click" , ()=>{
+        nameans.removeAttribute("readonly","readonly")
+
+        
+        rollans.removeAttribute("readonly","readonly")
+    
+    
+        
+        fatherans.removeAttribute("readonly","readonly")
+    
+        
+        courseans.removeAttribute("readonly","readonly")
+    
+        
+        specialans.removeAttribute("readonly","readonly")
+    
+    
+        
+        universityans.removeAttribute("readonly","readonly")
+    })
+
+    let savebtn = document.createElement("button")
+    savebtn.innerHTML="Save"
+
+    savebtn.addEventListener("click",()=>{
+        nameans.setAttribute("readonly","readonly")
+        rollans.value=nameinpt.value
+        rollans.setAttribute("readonly","readonly")
+    
+    
+        fatherans.value=nameinpt.value
+        fatherans.setAttribute("readonly","readonly")
+    
+        courseans.value=nameinpt.value
+        courseans.setAttribute("readonly","readonly")
+    
+        specialans.value=nameinpt.value
+        specialans.setAttribute("readonly","readonly")
+    
+    
+        universityans.value=nameinpt.value
+        universityans.setAttribute("readonly","readonly")
+    })
+
+    let deletebtn = document.createElement("button")
+    deletebtn.innerHTML="Delete"
+
+    deletebtn.addEventListener("click", ()=>{
+        secdiv.style.display="none"
+       })
+
+    maindiv.appendChild(secdiv)
+
+
+    secdiv.appendChild(nameans)
+    secdiv.appendChild(rollans)
+    secdiv.appendChild(fatherans)
+    secdiv.appendChild(courseans)
+    secdiv.appendChild(specialans)
+    secdiv.appendChild(universityans)
+
+
+
+
+    secdiv.appendChild(editbtn)
+    secdiv.appendChild(savebtn)
+    secdiv.appendChild(deletebtn)
+
+    
+    maindiv.prepend(uheading)
+    maindiv.prepend(csheading)
+    maindiv.prepend(cheading)
+    maindiv.prepend(fheading)
+    maindiv.prepend(rheading)
+    maindiv.prepend(nheading)
+
+    maindiv.prepend(answerhd)
+    maindiv.append(sh3div)
+})
+
+  </script>
+</body>
+</html>
+
+
+
+
