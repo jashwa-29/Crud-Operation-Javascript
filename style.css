@@ -97,15 +97,15 @@ h3{
 
 }
 
-/* input{
+input{
 height: 30px;
 border: 2px solid;
-border-radius: 5px;
+border-radius: 0px;
 color: black;
 font-size: 12px;
 font-weight: bold;
 padding-left: 3px;
-} */
+}
 input ::placeholder{
   font-size: 20px;
 }
